@@ -80,8 +80,8 @@ const Application = () => {
           Images
         </Typography>
         <S.Images>
-          {imageUrls.map((imageUrl) => (
-            <S.Image key={imageUrl} src={imageUrl} />
+          {imageUrls.map((imageUrl, index) => (
+            <S.Image key={index} src={imageUrl} />
           ))}
         </S.Images>
       </S.ImagePart>

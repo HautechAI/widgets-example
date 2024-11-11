@@ -2,6 +2,9 @@
 
 import { createServerSDK } from "@hautechai/server";
 
+console.log("----");
+console.log(process.env);
+
 const serverSDK = createServerSDK({
   appId: process.env.APP_ID!,
   appKeyId: process.env.APP_KEY_ID!,
