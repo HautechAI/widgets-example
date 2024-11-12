@@ -16,7 +16,7 @@ export const getClientToken = async (): Promise<string> => {
 
   let account = await serverSDK.root.accounts.get({
     id: userId,
-    externalId: userId,
+    external: true,
   });
   if (!account) {
     account = await serverSDK.root.accounts.create({ externalId: userId });
