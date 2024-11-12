@@ -28,9 +28,6 @@ const Application = () => {
         appId,
         appKeyId,
         appKeySecret,
-
-        // This line is just for local testing. You don't need to use it
-        endpoint: "https://api.dev.hautech.ai",
       });
 
       const getClientToken = async (): Promise<string> => {
@@ -61,15 +58,8 @@ const Application = () => {
       };
 
       // Client side
-
       const sdk = createWidgetsSDK({
         authToken: async () => getClientToken(),
-
-        // This lines is just for local testing. You don't need to use it
-        endpoints: {
-          client: "https://api.dev.hautech.ai",
-          widgets: "https://widgets.dev.hautech.ai",
-        },
       });
 
       const loadWidget = async () => {
@@ -90,7 +80,7 @@ const Application = () => {
 
         const collection = await sdk.client.collections.create();
         const imageUrl =
-          "https://www.collinsdictionary.com/images/thumb/dress_31690953_250.jpg";
+          "https://cdn.preview.hautech.ai/dca18ac7-ae93-46b9-84ec-628f3e41f292.jpg";
         const image = await sdk.client.images.create({ url: imageUrl });
 
         await widget.ready();
@@ -98,7 +88,8 @@ const Application = () => {
           collectionId: collection.id,
           input: {
             productImageId: image.id,
-            prompt: "Latina woman",
+            prompt:
+              "Ultra realistic, high resolution photo, beautiful woman, western European, walking dressed in Sleeveless pink fitted dress, white studio background",
           },
           text: { downloadImage: "Add to gallery" },
         });
