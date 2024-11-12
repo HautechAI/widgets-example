@@ -1,4 +1,4 @@
-# Widgets Example
+# Widgets Example 
 
 This is a simple example of how to use the Hautech Widgets SDK built with Next.js.
 
