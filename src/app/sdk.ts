@@ -8,7 +8,7 @@ const serverSDK = createServerSDK({
   appKeySecret: process.env.APP_KEY_SECRET!,
 
   // This line is just for local testing. You don't need to use it
-  endpoint: process.env.HAUTECH_API_ENDPOINT!,
+  // endpoint: process.env.HAUTECH_API_ENDPOINT!,
 });
 
 export const getClientToken = async (): Promise<string> => {

@@ -44,12 +44,16 @@ const Application = () => {
 
       await widget.ready();
       await widget.setProps({
+        buttons: {
+          download: {
+            text: "Add to gallery",
+          },
+        },
         collectionId: collection.id,
         input: {
           productImageId: image.id,
           prompt: "Latina woman",
         },
-        text: { downloadImage: "Add to gallery" },
       });
 
       setWidget(widget);
