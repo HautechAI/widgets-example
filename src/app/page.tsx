@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, CssBaseline, Typography } from "@mui/material";
-import { createWidgetsSDK, GenerateWidget } from "@hautechai/widgets";
+import { createWidgetsSDK, GenerateWidget } from "@hautechai/widgets/src";
 import { getClientToken } from "./sdk";
 import S from "./style";
 import { useCallback, useEffect, useState } from "react";
@@ -11,7 +11,7 @@ const sdk = createWidgetsSDK({
 
   // This lines is just for local testing. You don't need to use it
   endpoints: {
-    client: process.env.NEXT_PUBLIC_HAUTECH_API_ENDPOINT,
+    core: process.env.NEXT_PUBLIC_HAUTECH_API_ENDPOINT,
     widgets: process.env.NEXT_PUBLIC_HAUTECH_WIDGETS_ENDPOINT,
   },
 });
@@ -25,10 +25,10 @@ const Application = () => {
       const container = document.getElementById("widget-container");
       if (!container || container.children.length > 0) return;
 
-      const widget = sdk.widgets.generate();
+      const widget = sdk.widgets.generate.v1();
       widget.setHandlers({
         downloadImage: async (props: { imageId: string }) => {
-          const images = await sdk.client.images.getUrls({
+          const images = await sdk.core.images.getUrls({
             ids: [props.imageId],
           });
           const imageUrl = images[props.imageId];
@@ -37,10 +37,10 @@ const Application = () => {
       });
       widget.attach(container);
 
-      const collection = await sdk.client.collections.create();
+      const collection = await sdk.core.collections.create();
       const imageUrl =
         "https://www.collinsdictionary.com/images/thumb/dress_31690953_250.jpg";
-      const image = await sdk.client.images.create({ url: imageUrl });
+      const image = await sdk.core.images.createFromUrl({ url: imageUrl });
 
       await widget.ready();
       await widget.setProps({
