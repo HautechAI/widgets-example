@@ -252,13 +252,14 @@
   dependencies:
     tslib "^2.3.0"
 
-"@hautechai/sdk@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@hautechai/sdk/-/sdk-0.0.4.tgz#dff8e4d224eba3081ff77fd593a35961711463f1"
-  integrity sha512-tGcoGDz1i7+ZqyR9hF8ahJH1xke1tXR5ywuQbUFq0nV8n/oypLEHSeFPp4emTPOeyXBsO+KaDVgfPoIV+hsVMw==
+"@hautechai/sdk@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@hautechai/sdk/-/sdk-0.0.10.tgz#7d7a9b7749b42c8c32b435cdc97eca06f6d3e893"
+  integrity sha512-x8GhBDVfJmRSz8BAxDyVK0LOHxXt4UTxWo5jkgPOuMPGLkiCGR+4Tz6GvqRU9rKLs7Vs0p3TRLAokSmLw9to9Q==
   dependencies:
     axios "1.6.1"
     jsonwebtoken "8.5.1"
+    jwt-decode "4.0.0"
     pusher-js "8.4.0-rc2"
 
 "@hautechai/widgets@0.7.0":
